@@ -1,31 +1,46 @@
 ## code to prepare `cube_palettes` dataset goes here
 
-usethis::use_data(cube_palettes, overwrite = TRUE)
-
 library(palettes)
 
-# Cube palette discrete -------------------------------
+# Define and name Cube colours -------------------------------
 
-cube.green = "#034638"
-cube.pink = "#ECBAA8"
-cube.black = "black"
-cube.white = "white"
-cube.grey = "#D9D9D6"
+cube.green = pal_colour("#034638")
+usethis::use_data(cube.green, overwrite = TRUE)
+cube.pink = pal_colour("#ECBAA8")
+usethis::use_data(cube.pink,overwrite = TRUE)
+cube.black = pal_colour("black")
+usethis::use_data(cube.black,overwrite = TRUE)
+cube.white = pal_colour("white")
+usethis::use_data(cube.white,overwrite = TRUE)
+cube.grey = pal_colour("#D9D9D6")
+usethis::use_data(cube.grey,overwrite = TRUE)
 
+cube_colours = pal_palette(cube.green = cube.green,
+                          cube.pink = cube.pink,
+                          cube.black = cube.black,
+                          cube.white = cube.white,
+                          cube.grey = cube.grey)
+
+usethis::use_data(cube_colours,overwrite = TRUE)
+
+
+# Create tints ----------------------------------------------
+.greens = pal_ramp(c(cube.green,cube.white),n=6, interpolate ="spline")
+.greens = .greens[1:5]
+.pinks = pal_ramp(c(cube.pink,cube.white),n=6)
+.pinks = .pinks[1L:5L]
+.greys = pal_ramp(c(cube.grey,cube.white),n=6)
+.greys = .greys[1L:5L]
+
+# Define Cube palettes using colours from above ------------
 cube_palettes_discrete =
   pal_palette(
     base = c(cube.green,cube.pink,cube.black,cube.white,cube.grey),
     dark = c(cube.green,cube.pink,cube.black,
-             scales::alpha(cube.green,.8),
-             scales::alpha(cube.pink,.8),
-             cube.grey),
+             .greens[2L],.pinks[2L],cube.grey),
     light = c(cube.white,cube.pink,cube.black,
-             scales::alpha(cube.green,.4),
-             scales::alpha(cube.pink,.4),
-             cube.grey),
-    other = c(cube.green,cube.black,cube.white,cube.grey,
-              scales::alpha(cube.green,.8),
-              scales::alpha(cube.grey,.4))
+              .greens[3L],.pinks[3L],cube.grey),
+    other = c(cube.green,cube.black,cube.white,cube.grey)
     )
 
 plot(cube_palettes_discrete)
@@ -34,22 +49,20 @@ plot(cube_palettes_discrete)
 
 cube_palettes_tints =
   pal_palette(
-    greens =
-      c(cube.green,
-        scales::alpha(cube.green,.8),
-        scales::alpha(cube.green,.6),
-        scales::alpha(cube.green,.4),
-        scales::alpha(cube.green,.2)
-        ),
-    pinks =
-      c(cube.pink,
-        scales::alpha(cube.pink,.8),
-        scales::alpha(cube.pink,.6),
-        scales::alpha(cube.pink,.4),
-        scales::alpha(cube.pink,.2)
-      ),
-
-  )
+    greens = .greens,
+    pinks = .pinks,
+    greys = .greys
+    )
 
 plot(cube_palettes_tints)
+
+# Save to data
+cube_palettes =
+  c(
+    cube_palettes_discrete,
+    cube_palettes_tints
+  )
+usethis::use_data(cube_palettes_discrete, overwrite = TRUE)
+usethis::use_data(cube_palettes_tints, overwrite = TRUE)
+usethis::use_data(cube_palettes, overwrite = TRUE)
 
