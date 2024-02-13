@@ -1,10 +1,6 @@
 #' @keywords internal
 "_PACKAGE"
 
-#' Internal palletes methods
-#'
-#' @import palettes
-#' @keywords internal
-#' @name cube_palletes
-
+## usethis namespace: start
+## usethis namespace: end
 NULL
