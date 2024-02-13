@@ -29,18 +29,18 @@ usethis::use_data(cube_colours,overwrite = TRUE)
 .greens = .greens[1:5]
 .pinks = pal_ramp(c(cube.pink,cube.white),n=6)
 .pinks = .pinks[1L:5L]
-.greys = pal_ramp(c(cube.grey,cube.white),n=6)
+.greys = pal_ramp(c(cube.black,cube.white),n=6)
 .greys = .greys[1L:5L]
 
 # Define Cube palettes using colours from above ------------
 cube_palettes_discrete =
   pal_palette(
-    base = c(cube.green,cube.pink,cube.grey,cube.white),
-    dark = c(cube.green,cube.pink,cube.grey,
+    base = c(cube.green,cube.pink,cube.black,cube.grey,cube.white),
+    dark = c(cube.green,cube.pink,cube.black,
              .greens[2L],.pinks[2L],.greys[2L]),
-    light = c(cube.white,cube.pink,cube.grey,
-              .greens[3L],.pinks[3L],.greys[3L]),
-    other = c(cube.green,cube.grey,cube.white,.greens[4L],.greys[2L])
+    light = c(cube.white,cube.pink,cube.black,
+              .greens[2L],.pinks[2L],.greys[2L]),
+    other = c(cube.green,cube.grey,cube.white,.greens[2L],.greys[2L])
     )
 
 plot(cube_palettes_discrete)
