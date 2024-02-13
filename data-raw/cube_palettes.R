@@ -37,9 +37,9 @@ cube_palettes_discrete =
   pal_palette(
     base = c(cube.green,cube.pink,cube.black,cube.grey,cube.white),
     dark = c(cube.green,cube.pink,cube.black,
-             .greens[2L],.pinks[2L],.greys[2L]),
+             .greens[3L],.pinks[3L],.greys[3L]),
     light = c(cube.white,cube.pink,cube.black,
-              .greens[2L],.pinks[2L],.greys[2L]),
+              .greens[5L],.pinks[5L],.greys[5L]),
     other = c(cube.green,cube.grey,cube.white,.greens[2L],.greys[2L])
     )
 
