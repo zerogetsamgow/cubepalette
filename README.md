@@ -1,4 +1,11 @@
 
+<style>
+    img {
+        border-style: none;
+        width: 80%;
+        background-color: none;
+    }
+</style>
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # cubepalettes
@@ -39,21 +46,23 @@ corporate warmth.
 
 ### Cube Green
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" height="30px" />
+    #> Loading required package: palettes
+
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="80%" height="30px" />
 
 `cube.green` is used in majority, bringing maturity and a seriousness
 when needed.
 
 ### Cube Pink
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" height="30px" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="80%" height="30px" />
 
 `cube.pink` adds warmth, livening up layouts and highlighting key
 information.
 
 ### Cube Grey
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" height="30px" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="80%" height="30px" />
 
 `cube.grey` is used as a neutral background colour.
 
@@ -76,7 +85,6 @@ devtools::install_github("zerogetsamgow/cubepalette")
 
 ``` r
 library(cubepalette)
-#> Loading required package: palettes
 ```
 
 cubepalette comes with a set of 4 discrete colour palettes, and 3
@@ -97,7 +105,7 @@ composed of colours from the Cube Group brand guideline.
 plot(cube_palettes_discrete)
 ```
 
-<img src="man/figures/README-plot-cube-palettes-discrete-1.png" width="100%" />
+<img src="man/figures/README-plot-cube-palettes-discrete-1.png" width="80%" />
 
 ### Tints
 
@@ -110,7 +118,7 @@ Group colour palette can be used in 20 per cent increments.
 plot(cube_palettes_tints)
 ```
 
-<img src="man/figures/README-plot-cube-palettes-tints-1.png" width="100%" />
+<img src="man/figures/README-plot-cube-palettes-tints-1.png" width="80%" />
 
 Palettes can be subset using `[`, `[[`, and `$`.
 
@@ -120,7 +128,7 @@ Palettes can be subset using `[`, `[[`, and `$`.
   cube_palettes_tints[c("greens", "greys")]
   ```
 
-  <img src="man/figures/README-/extract-palette.svg" width="100%" />
+  <img src="man/figures/README-/extract-palette.svg" width="80%" />
 
 - To extract a single palette as a colour vector use `[[` or `$`:
 
@@ -128,13 +136,13 @@ Palettes can be subset using `[`, `[[`, and `$`.
   cube_palettes_tints[["pinks"]]
   ```
 
-  <img src="man/figures/README-/extract-vector-1.svg" width="100%" />
+  <img src="man/figures/README-/extract-vector-1.svg" width="80%" />
 
   ``` r
   cube_palettes_tints$pinks
   ```
 
-  <img src="man/figures/README-/extract-vector-2.svg" width="100%" />
+  <img src="man/figures/README-/extract-vector-2.svg" width="80%" />
 
 - To get names of palettes use `names()`:
 

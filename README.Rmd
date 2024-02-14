@@ -1,7 +1,13 @@
 ---
 output: github_document
 ---
-
+<style>
+    img {
+        border-style: none;
+        width: 80%;
+        background-color: none;
+    }
+</style>
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
@@ -9,7 +15,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "80%"
 )
 
 asciicast::init_knitr_engine(
@@ -45,7 +51,8 @@ Cube Group's colour palette uses modern and distinctive tones to convey corporat
 ### Cube Green
 
 ```{r echo=FALSE, out.height="30px"}
-plot(cubepalette::cube.green)
+library(cubepalette)
+plot(cube.green)
 ```
 
 `cube.green` is used in majority, bringing maturity and a seriousness when needed.
@@ -53,7 +60,7 @@ plot(cubepalette::cube.green)
 ### Cube Pink
 
 ```{r echo=FALSE, out.height="30px"}
-plot(cubepalette::cube.pink)
+plot(cube.pink)
 ```
 
 `cube.pink` adds warmth, livening up layouts and highlighting key information.
@@ -61,7 +68,7 @@ plot(cubepalette::cube.pink)
 ### Cube Grey
 
 ```{r echo=FALSE, out.height="30px"}
-plot(cubepalette::cube.grey)
+plot(cube.grey)
 ```
 
 `cube.grey` is used as a neutral background colour.
