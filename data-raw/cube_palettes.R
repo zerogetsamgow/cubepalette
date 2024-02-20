@@ -35,12 +35,12 @@ usethis::use_data(cube_colours,overwrite = TRUE)
 # Define Cube palettes using colours from above ------------
 cube_palettes_discrete =
   pal_palette(
-    base = c(cube.green,cube.pink,cube.black,cube.grey,cube.white),
-    dark = c(cube.green,cube.pink,cube.black,
+    base = c(cube.white,cube.green,cube.pink,cube.grey,cube.black),
+    dark = c(cube.green,cube.pink,cube.grey,cube.black,
              .greens[3L],.pinks[3L],.greys[3L]),
-    light = c(cube.white,cube.pink,cube.black,
+    light = c(cube.white,cube.pink,cube.grey,cube.black,
               .greens[5L],.pinks[5L],.greys[5L]),
-    other = c(cube.green,cube.grey,cube.white,.greens[2L],.greys[2L])
+    other = c(cube.green,cube.grey,cube.white,cube.black,.greens[2L],.greys[2L])
     )
 
 plot(cube_palettes_discrete)
