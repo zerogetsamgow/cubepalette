@@ -1,6 +1,6 @@
 Package: cubepalette
 Title: Cube Colour Palettes
-Version: 0.2.0
+Version: 0.3.0
 Authors@R: 
     person("Samuel", "Gow", , "samuel.gow@cubegroup.com.au", role = c("aut", "cre"))
 Description: Cube Group's colour palette uses modern and distinctive tones
