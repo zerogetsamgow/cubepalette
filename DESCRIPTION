@@ -11,8 +11,7 @@ Description: Cube Group's colour palette uses modern and distinctive tones
     'palettes' package, which provides methods for printing, formatting,
     casting and coercion, extraction and updating of components, plotting,
     colour mixing arithmetic, and colour interpolation.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: Creative Commons Attribution 4.0 International Public License
 URL: https://github.com/zerogetsamgow/cubepalette
 BugReports: https://github.com/zerogetsamgow/cubepalette/issues
 Encoding: UTF-8
@@ -22,5 +21,4 @@ Depends:
     palettes,
     R (>= 2.10)
 LazyData: true
-Imports: 
-    readpc
+Imports:
