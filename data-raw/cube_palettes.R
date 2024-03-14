@@ -15,11 +15,14 @@ usethis::use_data(cube.white,overwrite = TRUE)
 cube.grey = pal_colour("#D9D9D6")
 usethis::use_data(cube.grey,overwrite = TRUE)
 
-cube_colours = pal_palette(cube.green = cube.green,
-                          cube.pink = cube.pink,
-                          cube.black = cube.black,
-                          cube.white = cube.white,
-                          cube.grey = cube.grey)
+cube_colours =
+  pal_palette(
+    cube.green = cube.green,
+    cube.pink = cube.pink,
+    cube.grey = cube.grey,
+    cube.black = cube.black,
+    cube.white = cube.white
+    )
 
 usethis::use_data(cube_colours,overwrite = TRUE)
 
@@ -29,13 +32,13 @@ usethis::use_data(cube_colours,overwrite = TRUE)
 .greens = .greens[1:5]
 .pinks = pal_ramp(c(cube.pink,cube.white),n=6)
 .pinks = .pinks[1L:5L]
-.greys = pal_ramp(c(cube.black,cube.white),n=6)
+.greys = pal_ramp(c(cube.grey,cube.white),n=6)
 .greys = .greys[1L:5L]
 
 # Define Cube palettes using colours from above ------------
 cube_palettes_discrete =
   pal_palette(
-    base = c(cube.white,cube.green,cube.pink,cube.grey,cube.black),
+    base = c(cube.green,cube.pink,cube.grey,cube.black,cube.white),
     dark = c(cube.green,cube.pink,cube.grey,cube.black,
              .greens[3L],.pinks[3L],.greys[3L]),
     light = c(cube.white,cube.pink,cube.grey,cube.black,
