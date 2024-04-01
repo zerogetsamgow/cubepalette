@@ -37,7 +37,7 @@ The main purpose of cubepalette is to enable Cube Group staff to use the colours
 
 cubepalette was created with the **palettes** package, which provides a comprehensive library for colour vectors and colour palettes using a new family of colour classes (`palettes_colour`, and `palettes_palette`) that always print as hex codes with colour previews. Colour palette packages created with palettes have access to the following capabilities, all without requiring you to write any code: formatting, casting and coercion, extraction and updating of components, plotting, colour mixing arithmetic, and colour interpolation. 
 
-See the following vignettes to learn how to use cubepaellets with other packages:
+See the following vignettes to learn how to use cubepalletws with other packages:
 
 - [Using palettes with ggplot2](https://mccarthy-m-g.github.io/palettes/articles/ggplot2.html)
 - [Using palettes with gt](https://mccarthy-m-g.github.io/palettes/articles/gt.html)
@@ -141,18 +141,19 @@ Palettes can be subset using `[`, `[[`, and `$`.
 
   - To extract one or more palettes use `[`:
 
-    ```{asciicast extract-palette}
-    cube_palettes_tints[c("greens", "greys")]
+    ```{r extract-palette}
+    plot(cube_palettes_tints[c("greens", "greys")])
     ```
   
   - To extract a single palette as a colour vector use `[[` or `$`:
 
-    ```{asciicast extract-vector-1}
-    cube_palettes_tints[["oranges"]]
+    ```{r extract-vector-1}
+    
+    plot(cube_palettes_tints[["oranges"]])
     ```
     
-    ```{asciicast extract-vector-2}
-    cube_palettes_tints$darkoranges
+    ```{r extract-vector-2}
+    plot(cube_palettes_tints$darkoranges)
     ```
     
   - To get names of palettes use `names()`:

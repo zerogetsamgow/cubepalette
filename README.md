@@ -27,7 +27,7 @@ capabilities, all without requiring you to write any code: formatting,
 casting and coercion, extraction and updating of components, plotting,
 colour mixing arithmetic, and colour interpolation.
 
-See the following vignettes to learn how to use cubepaellets with other
+See the following vignettes to learn how to use cubepalletws with other
 packages:
 
 - [Using palettes with
@@ -41,35 +41,54 @@ packages:
 
 ## Included Colours
 
-Cube Group’s colour palette uses modern and distinctive tones to convey
-corporate warmth.
-
-### Cube Green
+The cube palettte includes three colours green, orange, grey. These are
+supported by light and dark shades.
 
     #> Loading required package: palettes
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="80%" height="30px" />
 
-`cube.green` is used in majority, bringing maturity and a seriousness
-when needed.
+### Primary colours
 
-### Cube Pink
+Cube Group’s colour palette uses modern and distinctive tones to convey
+corporate warmth.
+
+### Cube Green
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="80%" height="30px" />
 
-`cube.pink` adds warmth, livening up layouts and highlighting key
+`cube.darkgreen` is used in majority, bringing maturity and a
+seriousness when needed.
+
+### Cube Orange
+
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="80%" height="30px" />
+
+`cube.lightorange` adds warmth, livening up layouts and highlighting key
 information.
 
 ### Cube Grey
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="80%" height="30px" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="80%" height="30px" />
 
 `cube.grey` is used as a neutral background colour.
 
-### Cube Black and Cube White
+## Secondary colours
+
+### Cube Green, Orange and White
+
+The `cube.green`, `cube.orange` and `cube.white` comprise the secondary
+colours
+
+## Tertiary colours
+
+### Cube Green, Orange and White
+
+The `cube.lightgreen`, `cube.darkorange` and `cube.black` comprise the
+tertiary colours
 
 `cube.black` and `cube.white` are convenience names for `black` and
-`white` that allow for consistent syntax when using cubepalette.
+`white` that allow for consistent syntax when using the cubepalette.
 
 ## Installation
 
@@ -87,7 +106,7 @@ devtools::install_github("zerogetsamgow/cubepalette")
 library(cubepalette)
 ```
 
-cubepalette comes with a set of 4 discrete colour palettes, and 3
+cubepalette comes with a set of 4 discrete colour palettes, and 5
 sequential colour palettes, which can be accessed from the following R
 objects:
 
@@ -111,8 +130,11 @@ plot(cube_palettes_discrete)
 
 For long form documents infographics and charts, tints from the Cube
 Group colour palette can be used in 20 per cent increments.
-`cube_palettes_tints` is populated with compliant `greens`, `pinks` and
-`greys`.
+`cube_palettes_tints` is populated with compliant `greens`, `oraness`
+and `greys`.
+
+A broader palette - `darkoranges` - is included for greater
+variation/increments where required.
 
 ``` r
 plot(cube_palettes_tints)
@@ -125,31 +147,38 @@ Palettes can be subset using `[`, `[[`, and `$`.
 - To extract one or more palettes use `[`:
 
   ``` r
-  cube_palettes_tints[c("greens", "greys")]
+  plot(cube_palettes_tints[c("greens", "greys")])
   ```
 
-  <img src="man/figures/README-/extract-palette.svg" width="80%" />
+  <img src="man/figures/README-extract-palette-1.png" width="80%" />
 
 - To extract a single palette as a colour vector use `[[` or `$`:
 
   ``` r
-  cube_palettes_tints[["pinks"]]
+
+  plot(cube_palettes_tints[["oranges"]])
   ```
 
-  <img src="man/figures/README-/extract-vector-1.svg" width="80%" />
+  <img src="man/figures/README-extract-vector-1-1.png" width="80%" />
 
   ``` r
-  cube_palettes_tints$pinks
+  plot(cube_palettes_tints$darkoranges)
   ```
 
-  <img src="man/figures/README-/extract-vector-2.svg" width="80%" />
+  <img src="man/figures/README-extract-vector-2-1.png" width="80%" />
 
 - To get names of palettes use `names()`:
 
   ``` r
   names(cube_palettes_tints)
-  #> [1] "greens" "pinks"  "greys"
+  #> [1] "greens"      "oranges"     "darkoranges" "pinks"      
+  #> [5] "greys"
   ```
+
+## Cube pink
+
+`cubepalette` includes a colour `cube.pink` that is deprecated.
+`cube.lightorange` is the preferred name for this colour.
 
 ## Documentation
 
