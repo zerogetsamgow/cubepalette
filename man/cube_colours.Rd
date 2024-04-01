@@ -7,7 +7,7 @@
 \format{
 \subsection{\code{cube_colours}}{
 
-An object of class \code{palette} with 5 colours.
+An object of class \code{palette} with 3 colours.
 Use \code{names(cube_colours)} to return all colour names.
 }
 }

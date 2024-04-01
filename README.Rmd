@@ -46,24 +46,33 @@ See the following vignettes to learn how to use cubepaellets with other packages
 
 ## Included Colours
 
+The cube palettte includes three colours green, orange, grey. These are supported by light and dark shades.
+
+```{r echo=FALSE, out.height="30px"}
+library(cubepalette)
+plot(cube_colours)
+```
+
+### Primary colours
+
 Cube Group's colour palette uses modern and distinctive tones to convey corporate warmth.
 
 ### Cube Green
 
 ```{r echo=FALSE, out.height="30px"}
 library(cubepalette)
-plot(cube.green)
+plot(cube.darkgreen)
 ```
 
-`cube.green` is used in majority, bringing maturity and a seriousness when needed.
+`cube.darkgreen` is used in majority, bringing maturity and a seriousness when needed.
 
-### Cube Pink
+### Cube Orange
 
 ```{r echo=FALSE, out.height="30px"}
-plot(cube.pink)
+plot(cube.lightorange)
 ```
 
-`cube.pink` adds warmth, livening up layouts and highlighting key information.
+`cube.lightorange` adds warmth, livening up layouts and highlighting key information.
 
 ### Cube Grey
 
@@ -73,9 +82,20 @@ plot(cube.grey)
 
 `cube.grey` is used as a neutral background colour.
 
-### Cube Black and Cube White
+## Secondary colours
 
-`cube.black` and `cube.white` are convenience names for `black` and `white` that allow for consistent syntax when using cubepalette. 
+### Cube Green, Orange and White
+
+The `cube.green`, `cube.orange` and `cube.white` comprise the secondary colours
+
+## Tertiary colours
+
+### Cube Green, Orange and White
+
+The `cube.lightgreen`, `cube.darkorange` and `cube.black` comprise the tertiary colours
+
+
+`cube.black` and `cube.white` are convenience names for `black` and `white` that allow for consistent syntax when using the cubepalette. 
 
 
 ## Installation
@@ -109,7 +129,9 @@ plot(cube_palettes_discrete)
 
 ### Tints
 
-For long form documents infographics and charts, tints from the Cube Group colour palette can be used in 20 per cent increments. `cube_palettes_tints` is populated with compliant `greens`, `pinks` and `greys`.
+For long form documents infographics and charts, tints from the Cube Group colour palette can be used in 20 per cent increments. `cube_palettes_tints` is populated with compliant `greens`, `oraness` and `greys`.
+
+A broader palette - `darkoranges` - is included for greater variation/increments where required.
 
 ```{r plot-cube-palettes-tints}
 plot(cube_palettes_tints)
@@ -126,11 +148,11 @@ Palettes can be subset using `[`, `[[`, and `$`.
   - To extract a single palette as a colour vector use `[[` or `$`:
 
     ```{asciicast extract-vector-1}
-    cube_palettes_tints[["pinks"]]
+    cube_palettes_tints[["oranges"]]
     ```
     
     ```{asciicast extract-vector-2}
-    cube_palettes_tints$pinks
+    cube_palettes_tints$darkoranges
     ```
     
   - To get names of palettes use `names()`:
@@ -138,6 +160,10 @@ Palettes can be subset using `[`, `[[`, and `$`.
     ```{r}
     names(cube_palettes_tints)
     ```
+
+## Cube pink
+
+`cubepalette` includes a colour `cube.pink` that is deprecated. `cube.lightorange` is the preferred name for this colour.
 
 ## Documentation
 

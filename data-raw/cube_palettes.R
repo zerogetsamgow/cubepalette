@@ -3,47 +3,99 @@
 library(palettes)
 
 # Define and name Cube colours -------------------------------
+# Greens, with darkgreen the main cube colour
+cube.darkgreen = pal_colour("#034638")
+usethis::use_data(cube.darkgreen, overwrite = TRUE)
 
-cube.green = pal_colour("#034638")
+cube.green = pal_colour("#9AB5AF")
 usethis::use_data(cube.green, overwrite = TRUE)
-cube.pink = pal_colour("#ECBAA8")
-usethis::use_data(cube.pink,overwrite = TRUE)
+
+cube.lightgreen = pal_colour("#CDDAD7")
+usethis::use_data(cube.lightgreen, overwrite = TRUE)
+
+
+# Oranges, with lightorange the main cube colour
+cube.lightorange = pal_colour("#ECBAA8")
+usethis::use_data(cube.lightorange,overwrite = TRUE)
+cube.orange = pal_colour("#A64724")
+usethis::use_data(cube.orange,overwrite = TRUE)
+cube.darkorange = pal_colour("#572613")
+usethis::use_data(cube.darkorange,overwrite = TRUE)
+# Shade with grey the main cube colour
+cube.grey = pal_colour("#D9D9D6")#D6D6D9
+usethis::use_data(cube.grey,overwrite = TRUE)
+cube.darkgrey = pal_colour("#A5A59E")
+usethis::use_data(cube.darkgrey,overwrite = TRUE)
 cube.black = pal_colour("black")
 usethis::use_data(cube.black,overwrite = TRUE)
 cube.white = pal_colour("white")
 usethis::use_data(cube.white,overwrite = TRUE)
-cube.grey = pal_colour("#D9D9D6")
-usethis::use_data(cube.grey,overwrite = TRUE)
 
+# Keep cube.pink for old code, now call cube.orange
+cube.pink = pal_colour("#ECBAA8")
+usethis::use_data(cube.pink,overwrite = TRUE)
+
+# Create
 cube_colours =
   pal_palette(
-    cube.green = cube.green,
-    cube.pink = cube.pink,
-    cube.grey = cube.grey,
-    cube.black = cube.black,
-    cube.white = cube.white
+    #primary colours
+    primary = c(
+      cube.darkgreen,
+      cube.lightorange,
+      cube.grey),
+    # secondary colours
+    #secondary
+    secondary =
+      c(
+        cube.green,
+        cube.orange,
+        cube.white),
+    # tertiary colours
+    tertiary =
+      c(
+        cube.lightgreen,
+        cube.darkorange,
+        cube.black
+        )
     )
 
 usethis::use_data(cube_colours,overwrite = TRUE)
 
 
 # Create tints ----------------------------------------------
-.greens = pal_ramp(c(cube.green,cube.white),n=6, interpolate ="spline")
+# Greens at 20 per cent intervals
+.greens = pal_ramp(c(cube.darkgreen,cube.white),n=6, interpolate ="spline")
 .greens = .greens[1:5]
+# Orangees
+.oranges = pal_ramp(c(cube.lightorange,cube.white),n=6)
+.oranges = .oranges[1L:5L]
+
+.darkoranges = c(pal_ramp(c(cube.darkorange,cube.orange),n=4),pal_ramp(c(cube.orange,cube.lightorange),n=4),pal_ramp(c(cube.lightorange,cube.white),n=4))
+.darkoranges = .darkoranges[c(1L:3L,5L:7L,9L:11L)]
+
+.greys = c(pal_ramp(c(cube.darkgrey,cube.grey),n=3),pal_ramp(c(cube.grey,cube.white),n=6))
+.greys = .greys[c(1L:3L,5L:7L)]
+
 .pinks = pal_ramp(c(cube.pink,cube.white),n=6)
 .pinks = .pinks[1L:5L]
-.greys = pal_ramp(c(cube.grey,cube.white),n=6)
-.greys = .greys[1L:5L]
 
 # Define Cube palettes using colours from above ------------
 cube_palettes_discrete =
   pal_palette(
-    base = c(cube.green,cube.pink,cube.grey,cube.black,cube.white),
-    dark = c(cube.green,cube.pink,cube.grey,cube.black,
-             .greens[3L],.pinks[3L],.greys[3L]),
-    light = c(cube.white,cube.pink,cube.grey,cube.black,
-              .greens[5L],.pinks[5L],.greys[5L]),
-    other = c(cube.green,cube.grey,cube.white,cube.black,.greens[2L],.greys[2L])
+    base = c(cube.darkgreen,cube.lightorange,cube.grey,
+             cube.green,cube.orange,cube.white,
+             cube.lightgreen,cube.darkorange,cube.black),
+    dark = c(cube.darkgreen,cube.lightorange,cube.grey,
+             cube.green,cube.orange,
+             cube.lightgreen,cube.darkorange,cube.black),
+    # Omit darkgreen for light
+    light = c(cube.lightgreen,cube.lightorange,cube.grey,
+              cube.green,cube.orange,
+              cube.darkorange,cube.black),
+    # Omit lightorange for
+    other = c(cube.darkgreen,cube.orange,cube.grey,
+              cube.darkorange,cube.green,
+              cube.lightgreen,cube.black)
     )
 
 plot(cube_palettes_discrete)
@@ -53,6 +105,8 @@ plot(cube_palettes_discrete)
 cube_palettes_tints =
   pal_palette(
     greens = .greens,
+    oranges = .oranges,
+    darkoranges = .darkoranges,
     pinks = .pinks,
     greys = .greys
     )

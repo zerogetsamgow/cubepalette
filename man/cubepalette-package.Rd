@@ -6,7 +6,7 @@
 \alias{cubepalette-package}
 \title{cubepalette: Cube Colour Palettes}
 \description{
-Cube Group's colour palette uses modern and distinctive tones to convey corporate warmth. The Cube Group Green is used in majority, bringing maturity and a seriousness when needed. The Cube Group Pink adds warmth, livening up layouts and highlighting key information. Grey is used as a neutral background colour. Built using the 'palettes' package, which provides methods for printing, formatting, casting and coercion, extraction and updating of components, plotting, colour mixing arithmetic, and colour interpolation.
+Cube Group's colour palette uses modern and distinctive tones to convey corporate warmth. The Cube Group Green is used in majority, bringing maturity and a seriousness when needed. The Cube Group Orange adds warmth, livening up layouts and highlighting key information. Grey is used as a neutral background colour. Built using the 'palettes' package, which provides methods for printing, formatting, casting and coercion, extraction and updating of components, plotting, colour mixing arithmetic, and colour interpolation.
 }
 \seealso{
 Useful links:
