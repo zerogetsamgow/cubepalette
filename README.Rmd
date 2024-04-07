@@ -1,13 +1,7 @@
 ---
 output: github_document
 ---
-<style>
-    img {
-        border-style: none;
-        width: 80%;
-        background-color: none;
-    }
-</style>
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}

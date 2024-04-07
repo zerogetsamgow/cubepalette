@@ -28,15 +28,15 @@
 
 #' Cube Pink
 #'
-#' The Cube Group pink adds warmth, livening up layouts and highlighting
+#' The Cube Group pink, technically a light orange, adds warmth, livening up layouts and highlighting
 #' key information.
 
-#' @format ## `cube.pink`
+#' @format ## `cube.lightorange`
 #' An object of class `colour`.
 #'
 #' @examples
-#' plot(cube.pink)
-"cube.pink"
+#' plot(cube.lightorange)
+"cube.light"
 
 #' Cube Grey
 #'
