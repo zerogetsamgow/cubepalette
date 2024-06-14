@@ -66,14 +66,28 @@ usethis::use_data(cube_colours,overwrite = TRUE)
 # Greens at 20 per cent intervals
 .greens = pal_ramp(c(cube.darkgreen,cube.white),n=6, interpolate ="spline")
 .greens = .greens[1:5]
+
+.manygreens =
+  c(
+    pal_ramp(c(cube.darkgreen,cube.green), n=4, interpolate ="spline"),
+    pal_ramp(c(cube.green,cube.lightgreen),n=4, interpolate ="spline"),
+    pal_ramp(c(cube.lightgreen,cube.white),n=4, interpolate ="spline")
+)
+.manygreens = .manygreens[c(1L:3L,5L:7L,9L:11L)]
+
 # Orangees
 .oranges = pal_ramp(c(cube.lightorange,cube.white),n=6)
 .oranges = .oranges[1L:5L]
 
-.darkoranges = c(pal_ramp(c(cube.darkorange,cube.orange),n=4),pal_ramp(c(cube.orange,cube.lightorange),n=4),pal_ramp(c(cube.lightorange,cube.white),n=4))
+.darkoranges = c(pal_ramp(c(cube.darkorange,cube.orange),n=4,),
+                 pal_ramp(c(cube.orange,cube.lightorange),n=4),
+                 pal_ramp(c(cube.lightorange,cube.white),n=4))
 .darkoranges = .darkoranges[c(1L:3L,5L:7L,9L:11L)]
 
-.greys = c(pal_ramp(c(cube.darkgrey,cube.grey),n=3),pal_ramp(c(cube.grey,cube.white),n=6))
+.greys = c(
+  pal_ramp(c(cube.darkgrey,cube.grey),n=3)
+  ,pal_ramp(c(cube.grey,cube.white),n=6)
+  )
 .greys = .greys[c(1L:3L,5L:7L)]
 
 .pinks = pal_ramp(c(cube.pink,cube.white),n=6)
@@ -105,6 +119,7 @@ plot(cube_palettes_discrete)
 cube_palettes_tints =
   pal_palette(
     greens = .greens,
+    manygreens = .manygreens,
     oranges = .oranges,
     darkoranges = .darkoranges,
     pinks = .pinks,

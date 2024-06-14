@@ -36,7 +36,7 @@
 #'
 #' @examples
 #' plot(cube.lightorange)
-"cube.light"
+"cube.lightorange"
 
 #' Cube Grey
 #'
